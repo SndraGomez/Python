@@ -1,0 +1,40 @@
+
+from tkinter import *
+
+FONT=("arial", 12)
+
+def miles_to_km():
+	miles = int(input_valor.get())
+	convert_km = round( miles / 0.62137),2
+	km_converted.config(text=convert_km)
+
+window = Tk()
+
+window.title("Miles to Km Converter")
+window.config(padx=30, pady=30, bg="lightblue")
+
+input_valor = Entry(width=15, font =FONT, bd=5)
+# input_valor.insert(0, 'Type the number here')
+input_valor.grid(column= 1 , row=0)
+
+l_miles = Label(text="Miles ", font =FONT, bg="lightblue")
+l_miles.grid(column=2, row=0)
+l_miles.config(padx=20, pady=20)
+
+l_result = Label(text="Is equal to : ", font =FONT, bg="lightblue")
+l_result.grid(column= 0 , row=1)
+l_result.config(padx=20, pady=20)
+
+km_converted = Label(text=0, font =FONT, width= 10, bg="lightblue")
+km_converted.grid(column= 1 , row=1)
+km_converted.config(padx=20, pady=20)
+
+l_km = Label(text="Km", font = FONT, bg="lightblue")
+l_km.grid(column=2, row=1)
+l_km.config(padx=20, pady=20)
+
+calculate = Button(text="Calculate", command = miles_to_km, bd=2)
+calculate.grid(column=1, row = 2)
+
+
+window.mainloop()
